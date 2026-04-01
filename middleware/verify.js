@@ -7,14 +7,18 @@ export async function verifyToken(req,res,next){
     && req.headers.authorization.split(" ")[0]=="JWT"){
         let token=req.headers.authorization.split(" ")[1]
         
-        
-        const decoded = jwt.verify(token, 'SECRETKEY');
-        req.user = await userModel.findById(decoded.id).select("-password");
+        try{
+            const decoded = jwt.verify(token, 'SECRETKEY');
+            req.user = await userModel.findById(decoded.id).select("-password");
+        }
+        catch(err){
+            res.status(401).json({msg:"User is not authorized"})
+        }
         
         next()
     }
     else{
-        return res.status(401).json({msg:"User is not authorized"})
+        return res.status(404).json({msg: "Token does not exists"})
     }
 
 }
