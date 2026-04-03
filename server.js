@@ -5,6 +5,8 @@ import { cartRoute } from './routes/cart.route.js'
 import { userRoute } from './routes/user.route.js'
 import cors from "cors"
 
+
+
 const app=new express()
 const port=3000
 
@@ -24,6 +26,7 @@ mongoose.connect("mongodb+srv://narendrav11102_db_user:TOiCOqQ43e5rDAnH@cluster0
 productRoute(app)
 cartRoute(app)
 userRoute(app)
+
 
 //creating server
 app.listen(port,()=>{

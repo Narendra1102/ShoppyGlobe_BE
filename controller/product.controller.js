@@ -1,5 +1,7 @@
 import productModel from "../model/product.model.js"
 
+
+
 // GET /products
 export async function getProducts(req,res){
     try{

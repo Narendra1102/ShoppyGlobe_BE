@@ -1,6 +1,8 @@
 import productModel from "../model/product.model.js"
 import cartModel from "../model/cart.model.js"
 
+
+
 //ADD to cart
 export async function addToCart(req,res){
     
@@ -60,6 +62,7 @@ export async function updateCartItem(req,res){
         res.status(500).json({msg:"Error while editing cart item"})
     }
 }
+
 
 
 // DELETE Cart Item

@@ -1,6 +1,7 @@
 import { getProductById, getProducts, postProductData } from "../controller/product.controller.js"
 
 
+
 export function productRoute(app){
     //Fetch all products
     app.get("/api/products",getProducts)

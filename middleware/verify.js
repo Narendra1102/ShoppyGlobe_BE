@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken'
 import userModel from '../model/user.model.js';
 
+
 //verify the token
 export async function verifyToken(req,res,next){
     if(req.headers && req.headers.authorization

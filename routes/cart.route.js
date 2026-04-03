@@ -2,7 +2,6 @@ import { addToCart, deleteCartItem, updateCartItem } from "../controller/cart.co
 import { verifyToken } from "../middleware/verify.js"
 
 
-
 export function cartRoute(app){
     //add to cart
     app.post("/api/cart",verifyToken,addToCart)
