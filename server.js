@@ -23,9 +23,12 @@ mongoose.connect("mongodb+srv://narendrav11102_db_user:TOiCOqQ43e5rDAnH@cluster0
 })
 
 
+app.get('/' , (req,res)=> res.send("Root route"))
+
 productRoute(app)
 cartRoute(app)
 userRoute(app)
+
 
 
 //creating server
